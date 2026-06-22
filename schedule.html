@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedules - EcoRoute AI</title>
+    <title>Transit Schedules - EcoRoute AI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,46 +30,100 @@
     </nav>
 
     <main class="container my-5 flex-grow-1">
+        
         <div class="text-center mb-5">
-            <h1 class="fw-bold text-dark">Collection Schedules</h1>
-            <p class="text-muted">Filter regional transit loops and dispatch times across active zones.</p>
+            <span class="text-success text-uppercase fw-bold tracking-wider small">Fleet Telemetry</span>
+            <h1 class="fw-bold text-dark mt-1">Collection Schedules & Routing</h1>
+            <p class="text-muted mx-auto max-w-xl">Monitor automated dispatch windows, regional transit loops, and localized priority matrices dynamically.</p>
         </div>
 
-        <div class="d-flex justify-content-center gap-2 mb-4">
-            <button class="btn btn-outline-success filter-btn active" onclick="filterSchedule('all')">Show All</button>
-            <button class="btn btn-outline-success filter-btn" onclick="filterSchedule('Plastic')">Plastics</button>
-            <button class="btn btn-outline-success filter-btn" onclick="filterSchedule('Organic')">Organic</button>
-            <button class="btn btn-outline-success filter-btn" onclick="filterSchedule('E-Waste')">E-Waste</button>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card custom-card p-3">
+                    <div class="card-body">
+                        <small class="text-muted text-uppercase fw-semibold d-block mb-1">Fleet Deployment</small>
+                        <h4 class="fw-bold text-dark mb-0">18 / 22 Active Trucks</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card p-3">
+                    <div class="card-body">
+                        <small class="text-muted text-uppercase fw-semibold d-block mb-1">Next Dispatch Cycle</small>
+                        <h4 class="fw-bold text-success mb-0">04:30 AM (GMT+3)</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card p-3">
+                    <div class="card-body">
+                        <small class="text-muted text-uppercase fw-semibold d-block mb-1">Routing Congestion</small>
+                        <h4 class="fw-bold text-primary mb-0">Optimal Flow</h4>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="table-responsive bg-white p-3 rounded-3 shadow-sm">
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+            <button class="btn btn-emerald rounded-pill px-4 py-2 filter-btn active" onclick="filterSchedule('all')">Show All Streams</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2 filter-btn" onclick="filterSchedule('Plastic')">Plastics Only</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2 filter-btn" onclick="filterSchedule('Organic')">Organic Only</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2 filter-btn" onclick="filterSchedule('E-Waste')">E-Waste Only</button>
+        </div>
+
+        <div class="table-responsive bg-white p-4 rounded-4 shadow-sm border border-light">
             <table class="table table-hover align-middle mb-0">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Zone</th>
-                        <th>Coverage Area</th>
-                        <th>Interval</th>
-                        <th>Material Type</th>
+                <thead>
+                    <tr class="text-secondary small text-uppercase">
+                        <th class="py-3">Zone ID</th>
+                        <th class="py-3">Primary Sector Coverage</th>
+                        <th class="py-3">Interval / Window</th>
+                        <th class="py-3">Load State</th>
+                        <th class="py-3">Material Stream</th>
                     </tr>
                 </thead>
                 <tbody id="scheduleTableBody">
                     <tr class="schedule-row" data-material="Plastic">
-                        <td class="fw-bold">Zone Alpha</td>
-                        <td>Central Residential Hub</td>
+                        <td class="fw-bold text-dark">Zone Alpha</td>
+                        <td>Central Business District / Nairobi Core</td>
                         <td>Mon / Thu — 08:00</td>
-                        <td><span class="badge bg-primary">Plastic</span></td>
+                        <td><span class="badge bg-danger bg-opacity-10 text-danger px-2.5 py-1.5 rounded-3">High Priority</span></td>
+                        <td><span class="badge bg-primary px-3 py-1.5 rounded-pill">Plastic</span></td>
                     </tr>
                     <tr class="schedule-row" data-material="Organic">
-                        <td class="fw-bold">Zone Beta</td>
-                        <td>Industrial & Commercial Corridors</td>
+                        <td class="fw-bold text-dark">Zone Beta</td>
+                        <td>Industrial Commercial Complex Blocks</td>
                         <td>Tue / Fri — 22:00</td>
-                        <td><span class="badge bg-warning text-dark">Organic</span></td>
+                        <td><span class="badge bg-warning bg-opacity-10 text-warning text-dark px-2.5 py-1.5 rounded-3">Medium Load</span></td>
+                        <td><span class="badge bg-success px-3 py-1.5 rounded-pill">Organic</span></td>
                     </tr>
                     <tr class="schedule-row" data-material="E-Waste">
-                        <td class="fw-bold">Zone Gamma</td>
-                        <td>Suburban Residential Sectors</td>
+                        <td class="fw-bold text-dark">Zone Gamma</td>
+                        <td>Suburban Residential Estates East</td>
                         <td>Wednesday — 10:00</td>
-                        <td><span class="badge bg-secondary">E-Waste</span></td>
+                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary px-2.5 py-1.5 rounded-3">Normal</span></td>
+                        <td><span class="badge bg-dark px-3 py-1.5 rounded-pill">E-Waste</span></td>
+                    </tr>
+                    <tr class="schedule-row" data-material="Plastic">
+                        <td class="fw-bold text-dark">Zone Delta</td>
+                        <td>Westlands Commercial Plaza Hubs</td>
+                        <td>Mon / Wed — 14:00</td>
+                        <td><span class="badge bg-warning bg-opacity-10 text-warning text-dark px-2.5 py-1.5 rounded-3">Medium Load</span></td>
+                        <td><span class="badge bg-primary px-3 py-1.5 rounded-pill">Plastic</span></td>
+                    </tr>
+                    <tr class="schedule-row" data-material="Organic">
+                        <td class="fw-bold text-dark">Zone Epsilon</td>
+                        <td>Kilimani Residential Sectors</td>
+                        <td>Saturday — 06:30</td>
+                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary px-2.5 py-1.5 rounded-3">Normal</span></td>
+                        <td><span class="badge bg-success px-3 py-1.5 rounded-pill">Organic</span></td>
+                    </tr>
+                    <tr class="schedule-row" data-material="E-Waste">
+                        <td class="fw-bold text-dark">Zone Zeta</td>
+                        <td>Tech Innovation Corridors & Innovation Labs</td>
+                        <td>Last Friday — 16:00</td>
+                        <td><span class="badge bg-danger bg-opacity-10 text-danger px-2.5 py-1.5 rounded-3">High Priority</span></td>
+                        <td><span class="badge bg-dark px-3 py-1.5 rounded-pill">E-Waste</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,7 +132,8 @@
 
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
-            <p class="mb-0">&copy; 2026 EcoRoute AI. All rights reserved.</p>
+            <p class="mb-1">&copy; 2026 EcoRoute AI. All rights reserved.</p>
+            <small class="text-muted">Developed for Web Application Development Assessment.</small>
         </div>
     </footer>
 
