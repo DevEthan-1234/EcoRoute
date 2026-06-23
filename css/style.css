@@ -4,12 +4,25 @@ body {
     color: #1a1e1b; 
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    padding-top: 90px;
 }
 
 .navbar {
-    background-color: #0c0f0d !important; 
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background: linear-gradient(135deg, #044632 0%, #198754 100%) !important;
     padding: 1.1rem 0;
     backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: padding 0.3s ease-in-out;
+}
+
+.navbar.navbar-shrink {
+    padding: 0.6rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .navbar-brand {
@@ -177,8 +190,8 @@ body {
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: #0c0f0d;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, #044632 0%, #198754 100%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
         margin-top: 0.75rem;
         padding: 1rem;
@@ -229,4 +242,9 @@ body {
 
 .custom-card:hover .gallery-grid-img {
     transform: scale(1.05); 
+}
+
+footer {
+    background: linear-gradient(135deg, #044632 0%, #198754 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
