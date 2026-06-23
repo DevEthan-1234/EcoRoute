@@ -39,19 +39,14 @@ body {
 
 .hero-section {
     position: relative;
-    min-height: 80vh;
-    background: assets('images/recycle.jpg') no-repeat center center;
-    background-size: cover;
+    min-height: 65vh;
+    background-color: #f4f7f5;
+    border-bottom: 1px solid rgba(211, 225, 214, 0.4);
+    padding: 6rem 0;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(12, 15, 13, 0.8) 0%, rgba(12, 15, 13, 0.6) 100%);
-    z-index: 1;
+    display: none;
 }
 
 .hero-content {
@@ -78,10 +73,10 @@ body {
     border-color: rgba(13, 138, 95, 0.25);
 }
 
-
 .bg-dark.text-white {
     background-color: #0c0f0d !important; 
 }
+
 .btn-emerald {
     background-color: #0d8a5f; 
     border: none;
@@ -108,6 +103,78 @@ body {
 .max-w-xl {
     max-width: 620px;
 }
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.feature-hover {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease !important;
+}
+
+.feature-hover:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+    box-shadow: 0 20px 38px rgba(13, 138, 95, 0.08) !important;
+    border-color: rgba(13, 138, 95, 0.35) !important;
+}
+
+.counter-stat {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.counter-stat:hover {
+    transform: scale(1.08);
+}
+
+.pipeline-panel {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.panel-index {
+    color: #6c757d;
+    transition: color 0.3s ease;
+}
+
+.panel-status-tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.pipeline-panel:hover, .pipeline-panel.active-panel {
+    background-color: rgba(13, 138, 95, 0.08);
+    border-color: rgba(13, 138, 95, 0.4);
+    transform: translateX(4px);
+}
+
+.pipeline-panel:hover .panel-index, .pipeline-panel.active-panel .panel-index {
+    color: #0d8a5f;
+}
+
+.pipeline-panel:hover .panel-status-tag, .pipeline-panel.active-panel .panel-status-tag {
+    background: rgba(13, 138, 95, 0.2);
+    color: #ffffff;
+}
+
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background-color: #0c0f0d;
@@ -128,9 +195,11 @@ body {
     }
     
     .hero-section {
-        min-height: 70vh;
+        min-height: 50vh;
+        padding: 4rem 0;
     }
 }
+
 .carousel-img {
     height: 480px;
     object-fit: cover;
