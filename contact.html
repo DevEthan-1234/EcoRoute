@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoRoute - Contact Us</title>
+    <title>Contact Us - EcoRoute</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">EcoRoute</a>
-            <button class="navbar-brand navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
@@ -29,54 +29,85 @@
         </div>
     </nav>
 
-    <main class="container my-5 flex-grow-1">
-        <div class="bg-white p-5 rounded-3 shadow-sm border-start border-success border-5">
-            <div class="container-fluid py-2">
-                <h1 class="display-5 fw-bold text-dark mb-3">Contact Us</h1>
-                <p class="fs-5 text-muted mb-4">Have questions about our analytics or logistics pipelines? Reach out to our support team below.</p>
+    <main class="flex-grow-1 pb-5">
+        
+        <div class="container my-5 text-center">
+            <span class="text-success text-uppercase fw-bold tracking-wider small">Get In Touch</span>
+            <h1 class="fw-bold text-dark mt-1">Contact Our Team</h1>
+            <p class="text-muted mx-auto max-w-xl">Have questions about our analytics engine, route optimization, or logistics pipelines? Reach out below.</p>
+        </div>
+
+        <div class="container mb-5">
+            <div class="row g-4">
                 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <form>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label for="firstName" class="form-label fw-semibold">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="e.g., Ethan" required>
+                <div class="col-12 col-lg-8">
+                    <div class="card custom-card border-0 shadow-sm">
+                        <div class="card-body">
+                            <form>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label small fw-semibold text-dark">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="e.g., Ethan" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label small fw-semibold text-dark">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Smith" required>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="lastName" class="form-label fw-semibold">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Smith" required>
+                                <div class="mb-3">
+                                    <label for="emailAddress" class="form-label small fw-semibold text-dark">Email Address</label>
+                                    <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required>
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="emailAddress" class="form-label fw-semibold">Email Address</label>
-                                <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="messageBody" class="form-label fw-semibold">Your Message</label>
-                                <textarea class="form-control" id="messageBody" rows="5" placeholder="How can we help you today?" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-lg px-4">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="col-lg-4 mt-5 mt-lg-0">
-                        <div class="p-4 bg-light rounded-3 border">
-                            <h4 class="h5 fw-bold mb-3">Headquarters</h4>
-                            <p class="mb-1"><strong>Address:</strong><br>1200 EcoWay Blvd,<br>Nairobi, Kenya</p>
-                            <p class="mb-1 mt-3"><strong>Email:</strong><br><a href="mailto:support@ecoroute.ai" class="text-success text-decoration-none">support@ecoroute.ai</a></p>
-                            <p class="mb-0 mt-3"><strong>Phone:</strong><br>+254 20 123 4567</p>
+                                <div class="mb-4">
+                                    <label for="messageBody" class="form-label small fw-semibold text-dark">Your Message</label>
+                                    <textarea class="form-control" id="messageBody" rows="5" placeholder="How can we help your sector today?" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-emerald rounded-pill px-4 py-2.5 fw-medium text-white transition-all">Send Message</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="card custom-card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="fw-bold text-dark mb-4">Headquarters</h4>
+                            
+                            <div class="mb-4">
+                                <span class="text-success text-uppercase fw-bold tracking-wider small">Address</span>
+                                <p class="text-muted small mt-1 mb-0">
+                                    1200 EcoWay Blvd,<br>
+                                    Nairobi, Kenya
+                                </p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <span class="text-success text-uppercase fw-bold tracking-wider small">Email</span>
+                                <p class="text-muted small mt-1 mb-0">
+                                    <a href="mailto:support@ecoroute.ai" class="text-success text-decoration-none fw-medium">support@ecoroute.ai</a>
+                                </p>
+                            </div>
+                            
+                            <div class="mb-0">
+                                <span class="text-success text-uppercase fw-bold tracking-wider small">Phone</span>
+                                <p class="text-muted small mt-1 mb-0">
+                                    +254 20 123 4567
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
+
     <footer class="text-white text-center py-4 mt-auto">
-    <div class="container">
-        <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
-        <small class="text-white-50">Developed for Web Application Development Assessment.</small>
-    </div>
-</footer>
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
+            <small class="text-white-50">Developed for Web Application Development Assessment.</small>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

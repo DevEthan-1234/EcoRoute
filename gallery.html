@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilities Showcase - EcoRoute</title>
+    <title>Facilities & Fleet Showcase - EcoRoute</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -29,42 +29,56 @@
         </div>
     </nav>
 
-    <main class="flex-grow-1 pb-5">
+    <!-- Content start -->
+    <main class="flex-grow-1 pb-5 pt-4">
         
         <div class="container my-5 text-center">
             <span class="text-success text-uppercase fw-bold tracking-wider small">Network Infrastructure</span>
-            <h1 class="fw-bold text-dark mt-1">Our Eco-Logistics Facilities</h1>
-            <p class="text-muted mx-auto max-w-xl">Explore our smart sorting networks and material recovery centers driving automated urban distribution pipelines.</p>
+            <h1 class="fw-bold text-dark mt-1">Our Eco-Logistics Operations</h1>
+            <p class="text-muted mx-auto max-w-xl">Explore our smart sorting networks, material recovery centers, and automated transit fleets driving clean urban distribution pipelines.</p>
         </div>
 
+        <!-- Carousel -->
         <div class="container mb-5">
-            <div id="facilityCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
+            <div id="facilityCarousel" class="carousel slide shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
                         <img src="assets/image/hub.png" class="d-block w-100 carousel-img" alt="Central Logistics Operations">
-                        <div class="carousel-caption d-none d-md-block backdrop-blur text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4">
-                            <h5 class="fw-bold">Next-Generation Optical Sorting</h5>
-                            <p class="small mb-0">Our automated hubs implement high-speed sorting processing sensors to isolate raw polymers instantly.</p>
+                        <div class="carousel-caption d-none d-md-block text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4 backdrop-blur">
+                            <span class="badge bg-success mb-2 text-uppercase">Infrastructure</span>
+                            <h4 class="fw-bold text-white mb-1">Next-Generation Optical Sorting</h4>
+                            <p class="small mb-0 opacity-90">Our automated hubs implement high-speed sorting processing sensors to isolate raw polymers instantly.</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="assets/image/compost.png" class="d-block w-100 carousel-img" alt="Organic Solid Breakdown">
-                        <div class="carousel-caption d-none d-md-block backdrop-blur text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4">
-                            <h5 class="fw-bold">Sustainable Organic Refinement</h5>
-                            <p class="small mb-0">Transforming municipal biomass loads into stabilized environmental topsoils for agro-distribution channels.</p>
+                        <div class="carousel-caption d-none d-md-block text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4 backdrop-blur">
+                            <span class="badge bg-warning text-dark mb-2 text-uppercase">Organic</span>
+                            <h4 class="fw-bold text-white mb-1">Sustainable Organic Refinement</h4>
+                            <p class="small mb-0 opacity-90">Transforming municipal biomass loads into stabilized environmental topsoils for agro-distribution channels.</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="assets/image/ewaste.png" class="d-block w-100 carousel-img" alt="Electronic Asset Tracking">
-                        <div class="carousel-caption d-none d-md-block backdrop-blur text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4">
-                            <h5 class="fw-bold">Secured Hardware Reclamation</h5>
-                            <p class="small mb-0">Specialized circuit extractions mapping loop points for clean industrial copper and precious metal recycling.</p>
+                        <div class="carousel-caption d-none d-md-block text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4 backdrop-blur">
+                            <span class="badge bg-info text-dark mb-2 text-uppercase">E-Waste</span>
+                            <h4 class="fw-bold text-white mb-1">Secured Hardware Reclamation</h4>
+                            <p class="small mb-0 opacity-90">Specialized circuit extractions mapping loop points for clean industrial copper and precious metal recycling.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="assets/image/trucks.png" class="d-block w-100 carousel-img" alt="Smart Collection Fleet">
+                        <div class="carousel-caption d-none d-md-block text-start p-4 rounded-3 start-50 translate-middle-x w-75 mb-4 backdrop-blur">
+                            <span class="badge bg-primary mb-2 text-uppercase">Mobility</span>
+                            <h4 class="fw-bold text-white mb-1">AI-Optimized Collection Fleet</h4>
+                            <p class="small mb-0 opacity-90">Dynamically dispatched emission-controlled transport trucks navigating dynamic urban waste retrieval pathways.</p>
                         </div>
                     </div>
                 </div>
@@ -80,11 +94,13 @@
             </div>
         </div>
 
+        <!-- Grid Cards -->
         <div class="container">
             <div class="row g-4">
                 
+                <!-- Card 1 -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden p-0">
+                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden">
                         <div class="card-img-wrapper">
                             <img src="assets/image/hub.png" class="card-img-top gallery-grid-img" alt="Smart Material Recovery Center">
                         </div>
@@ -95,13 +111,14 @@
                             </div>
                             <p class="card-text text-muted small">Our flagship facility leveraging automated machine sorting conveyor tracks to process up to 45 tons of consumer recyclables daily.</p>
                             <hr class="text-muted opacity-25">
-                            <small class="text-secondary fw-semibold">Specialization: <span class="text-primary">Plastics & Aluminum</span></small>
+                            <small class="text-secondary fw-semibold">Specialization: <span class="text-success">Plastics & Aluminum</span></small>
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden p-0">
+                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden">
                         <div class="card-img-wrapper">
                             <img src="assets/image/compost.png" class="card-img-top gallery-grid-img" alt="Biomass and Organic Sorting Plant">
                         </div>
@@ -117,8 +134,9 @@
                     </div>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden p-0">
+                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden">
                         <div class="card-img-wrapper">
                             <img src="assets/image/ewaste.png" class="card-img-top gallery-grid-img" alt="Electronic Waste Sorting Depot">
                         </div>
@@ -134,16 +152,34 @@
                     </div>
                 </div>
 
+                <!-- Card 4 (Fleet Integration) -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card custom-card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="card-img-wrapper">
+                            <img src="assets/image/truck.png" class="card-img-top gallery-grid-img" alt="EcoRoute Garbage Collection Fleet">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Smart Eco-Transit Fleet</h5>
+                                <span class="badge bg-success">On Duty</span>
+                            </div>
+                            <p class="card-text text-muted small">AI-managed refuse collection trucks equipped with automated volume sensors to minimize carbon footprints while picking up municipal waste.</p>
+                            <hr class="text-muted opacity-25">
+                            <small class="text-secondary fw-semibold">Specialization: <span class="text-primary">Dynamic Waste Retrieval</span></small>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
     <footer class="text-white text-center py-4 mt-auto">
-    <div class="container">
-        <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
-        <small class="text-white-50">Developed for Web Application Development Assessment.</small>
-    </div>
-</footer>
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
+            <small class="text-white-50">Developed for Web Application Development Assessment.</small>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

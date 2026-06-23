@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoRoute - FAQs</title>
+    <title>FAQs - EcoRoute</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">EcoRoute</a>
-            <button class="navbar-brand navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
@@ -29,58 +29,125 @@
         </div>
     </nav>
 
-    <main class="container my-5 flex-grow-1">
-        <div class="bg-white p-5 rounded-3 shadow-sm border-start border-success border-5">
-            <div class="container-fluid py-2">
-                <h1 class="display-5 fw-bold text-dark mb-4">Frequently Asked Questions</h1>
-                <p class="fs-5 text-muted mb-4">Find answers to common questions about our AI logistics operations and services.</p>
-                
-                <div class="accordion accordion-flush border rounded-3" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                How does the EcoRoute AI routing system work?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Our platform uses predictive analytics and real-time traffic data to dynamically adjust collection routes. This ensures our fleets take the most efficient paths, minimizing fuel consumption, reducing overhead, and cutting carbon emissions.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                What types of waste do you collect and process?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                We primarily categorize waste into Recyclables (plastics, glass, paper), Organic/Compost, and General Waste. Our predictive models help balance the load of each truck based on the assigned zone's historical waste generation and current needs.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                How often is the Analytics Dashboard updated?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                The analytics dashboard reflects near real-time data synced directly from our active fleet logs and computer vision checkpoints at sorting facilities. Overall metrics are refreshed roughly every 15 minutes.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                What should I do if my sector's collection is delayed?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Minor delays can occur due to unpredictable traffic conditions or localized route optimization. You can check the exact status on the <a href="schedule.html" class="text-success text-decoration-none">Schedules page</a>. If a pickup is missed entirely, please reach out to us via the <a href="contact.html" class="text-success text-decoration-none">Contact page</a>.
+    <main class="flex-grow-1 pb-5">
+        
+        <div class="container my-5 text-center">
+            <span class="text-success text-uppercase fw-bold tracking-wider small">Information Desk</span>
+            <h1 class="fw-bold text-dark mt-1">Frequently Asked Questions</h1>
+            <p class="text-muted mx-auto max-w-xl">Find answers to common questions about our AI logistics operations, analytics dashboards, and services.</p>
+        </div>
+
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+                    <div class="card custom-card border-0 shadow-sm overflow-hidden">
+                        <div class="card-body p-4">
+                            <div class="accordion accordion-flush" id="faqAccordion">
+                                
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            How does the EcoRoute AI routing system work?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            Our platform uses predictive analytics and real-time traffic data to dynamically adjust collection routes. This ensures our fleets take the most efficient paths, minimizing fuel consumption, reducing overhead, and cutting carbon emissions.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            What types of waste do you collect and process?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            We primarily categorize waste into Recyclables (plastics, glass, paper), Organic/Compost, and General Waste. Our predictive models help balance the load of each truck based on the assigned zone's historical waste generation and current needs.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            How often is the Analytics Dashboard updated?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            The analytics dashboard reflects near real-time data synced directly from our active fleet logs and computer vision checkpoints at sorting facilities. Overall metrics are refreshed roughly every 15 minutes.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            What should I do if my sector's collection is delayed?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            Minor delays can occur due to unpredictable traffic conditions or localized route optimization. You can check the exact status on the <a href="schedule.html" class="text-success fw-medium text-decoration-none">Schedules page</a>. If a pickup is missed entirely, please reach out to us via the <a href="contact.html" class="text-success fw-medium text-decoration-none">Contact page</a>.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Can businesses integrate with the EcoRoute API?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            Yes, commercial operators and corporate partners can access our automated web webhooks and REST endpoints to monitor proprietary emission tracking balances, bulk drop-off validations, and high-frequency dispatch updates.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingSix">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            Are there subscription fees for community registration?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            Standard residential monitoring and access to public collection tracking schedules are completely free as part of our municipal optimization frameworks. Premium data access channels are reserved explicitly for enterprise compliance workflows.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-light py-2">
+                                    <h2 class="accordion-header" id="headingSeven">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                            How does EcoRoute handle e-waste disposal securely?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            All incoming hardware loads sorted through our Mombasa E-Depot adhere to rigid electronic asset reclamation parameters. Safe physical disruption ensures precious rare earth elements are cleanly separated while maintaining absolute data destruction security protocols.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item border-0 py-2">
+                                    <h2 class="accordion-header" id="headingEight">
+                                        <button class="accordion-button collapsed fw-bold text-dark bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                            How can I adjust my household collection interval?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted small">
+                                            Interval adjustments can be configured dynamically inside your regional profile dashboard. Our machine engines automatically process requests to modify frequencies, recalculating transit container load predictions along the active path instantly.
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -89,12 +156,12 @@
         </div>
     </main>
 
-   <footer class="text-white text-center py-4 mt-auto">
-    <div class="container">
-        <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
-        <small class="text-white-50">Developed for Web Application Development Assessment.</small>
-    </div>
-</footer>
+    <footer class="text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 EcoRoute. All rights reserved.</p>
+            <small class="text-white-50">Developed for Web Application Development Assessment.</small>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
