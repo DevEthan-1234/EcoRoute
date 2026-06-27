@@ -65,6 +65,14 @@ if (contactForm) {
             return;
         }
 
+        const extensionRegex = /\.(com|edu|go|ke)$/i;
+        if (!extensionRegex.test(emailInput)) {
+            feedbackContainer.classList.remove('d-none');
+            feedbackContainer.classList.add('alert-danger');
+            feedbackContainer.textContent = "Error: Unauthorized domain extension. System handles only .com, .edu, .go, or .ke loops.";
+            return;
+        }
+
     
     });
 }
