@@ -51,7 +51,15 @@ if (contactForm) {
             feedbackContainer.classList.remove('d-none');
             feedbackContainer.classList.add('alert-danger');
             feedbackContainer.textContent = "Error: Please input a valid standard formatting syntax email address.";
-            return; // Stops execution if the email format is bad
+            return;
+        }
+
+        const providerRegex = /@(gmail|outlook|hotmail|icloud|apple)\./i;
+        if (!providerRegex.test(emailInput)) {
+            feedbackContainer.classList.remove('d-none');
+            feedbackContainer.classList.add('alert-danger');
+            feedbackContainer.textContent = "Error: Enterprise routing only accepts Gmail, Outlook, Hotmail, or Apple mail domains.";
+            return;
         }
     });
 }
