@@ -45,6 +45,14 @@ if (contactForm) {
             feedbackContainer.textContent = "Error: All validation metrics must be satisfied. Fields cannot be empty.";
             return;
         }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput)) {
+            feedbackContainer.classList.remove('d-none');
+            feedbackContainer.classList.add('alert-danger');
+            feedbackContainer.textContent = "Error: Please input a valid standard formatting syntax email address.";
+            return; // Stops execution if the email format is bad
+        }
     });
 }
 }
