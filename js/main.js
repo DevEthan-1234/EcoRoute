@@ -73,6 +73,11 @@ if (contactForm) {
             return;
         }
 
-    
+        feedbackContainer.classList.remove('d-none');
+        feedbackContainer.classList.add('alert-success');
+        feedbackContainer.textContent = "Success: Dispatch registry log transmission processed successfully.";
+        
+        contactForm.reset();
+
     });
 }
