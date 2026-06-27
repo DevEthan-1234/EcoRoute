@@ -38,6 +38,13 @@ if (contactForm) {
         const feedbackContainer = document.getElementById('validationFeedback');
         
         feedbackContainer.className = "alert d-none";
+
+        if (nameInput === "" || emailInput === "" || messageInput === "") {
+            feedbackContainer.classList.remove('d-none');
+            feedbackContainer.classList.add('alert-danger');
+            feedbackContainer.textContent = "Error: All validation metrics must be satisfied. Fields cannot be empty.";
+            return;
+        }
     });
 }
 }
