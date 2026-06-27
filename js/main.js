@@ -27,4 +27,17 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('navbar-shrink');
     }
 });
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        const nameInput = document.getElementById('clientName').value.trim();
+        const emailInput = document.getElementById('clientEmail').value.trim();
+        const messageInput = document.getElementById('clientMessage').value.trim();
+        const feedbackContainer = document.getElementById('validationFeedback');
+        
+        feedbackContainer.className = "alert d-none";
+    });
+}
 }
