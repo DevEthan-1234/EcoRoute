@@ -1,3 +1,4 @@
+// 1. Schedule Filter Function
 function filterSchedule(material) {
     const rows = document.querySelectorAll('.schedule-row');
     const buttons = document.querySelectorAll('.filter-btn');
@@ -18,7 +19,7 @@ function filterSchedule(material) {
             row.style.display = 'none'; 
         }
     });
-
+} 
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -27,6 +28,7 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('navbar-shrink');
     }
 });
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
@@ -39,10 +41,11 @@ if (contactForm) {
         
         feedbackContainer.className = "alert d-none";
 
+    
         if (nameInput === "" || emailInput === "" || messageInput === "") {
             feedbackContainer.classList.remove('d-none');
             feedbackContainer.classList.add('alert-danger');
-            feedbackContainer.textContent = "Error: All validation metrics must be satisfied. Fields cannot be empty.";
+            feedbackContainer.textContent = "Please fill out all fields.";
             return;
         }
 
@@ -50,7 +53,7 @@ if (contactForm) {
         if (!emailRegex.test(emailInput)) {
             feedbackContainer.classList.remove('d-none');
             feedbackContainer.classList.add('alert-danger');
-            feedbackContainer.textContent = "Error: Please input a valid standard formatting syntax email address.";
+            feedbackContainer.textContent = "Please enter a valid email address.";
             return;
         }
 
@@ -58,9 +61,10 @@ if (contactForm) {
         if (!providerRegex.test(emailInput)) {
             feedbackContainer.classList.remove('d-none');
             feedbackContainer.classList.add('alert-danger');
-            feedbackContainer.textContent = "Error: Enterprise routing only accepts Gmail, Outlook, Hotmail, or Apple mail domains.";
+            feedbackContainer.textContent = "Please use a standard email provider (Gmail, Outlook, Hotmail, or iCloud).";
             return;
         }
+
+    
     });
-}
 }
