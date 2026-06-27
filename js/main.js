@@ -80,4 +80,28 @@ if (contactForm) {
         contactForm.reset();
 
     });
+
+const teamCarousel = document.querySelector('#teamCarousel');
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            const carousel = new bootstrap.Carousel(teamCarousel, {
+                interval: 3500,
+                wrap: true
+            });
+            
+            const items = teamCarousel.querySelectorAll('.carousel-item');
+            items.forEach((el) => {
+                let next = el.nextElementSibling;
+                if (!next) {
+                    next = items[0];
+                }
+                let cloneNode = next.cloneNode(true);
+                el.appendChild(cloneNode.children[0]);
+                
+                if (next.nextElementSibling) {
+                    next.nextElementSibling.cloneNode(true).childNodes.forEach(child => el.appendChild(child));
+                } else {
+                    items[0].cloneNode(true).childNodes.forEach(child => el.appendChild(child));
+                }
+            });
+        }
 }
