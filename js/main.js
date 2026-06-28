@@ -100,11 +100,12 @@ if (teamCarousel) {
             let cloneNode = next.cloneNode(true);
             el.appendChild(cloneNode.children[0]);
             
-            if (next.nextElementSibling) {
-                next.nextElementSibling.cloneNode(true).childNodes.forEach(child => el.appendChild(child));
-            } else {
-                items[0].cloneNode(true).childNodes.forEach(child => el.appendChild(child));
+            let nextNext = next.nextElementSibling;
+            if (!nextNext) {
+                nextNext = items[0];
             }
+            let cloneNode2 = nextNext.cloneNode(true);
+            el.appendChild(cloneNode2.children[0]);
         });
     }
 }
