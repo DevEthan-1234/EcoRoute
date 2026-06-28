@@ -1,4 +1,3 @@
-// 1. Schedule Filter Function
 function filterSchedule(material) {
     const rows = document.querySelectorAll('.schedule-row');
     const buttons = document.querySelectorAll('.filter-btn');
@@ -20,12 +19,15 @@ function filterSchedule(material) {
         }
     });
 } 
+
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('navbar-shrink');
-    } else {
-        navbar.classList.remove('navbar-shrink');
+    if (navbar) { 
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-shrink');
+        } else {
+            navbar.classList.remove('navbar-shrink');
+        }
     }
 });
 
@@ -39,9 +41,9 @@ if (contactForm) {
         const messageInput = document.getElementById('clientMessage').value.trim();
         const feedbackContainer = document.getElementById('validationFeedback');
         
+        if (!feedbackContainer) return;
         feedbackContainer.className = "alert d-none";
 
-    
         if (nameInput === "" || emailInput === "" || messageInput === "") {
             feedbackContainer.classList.remove('d-none');
             feedbackContainer.classList.add('alert-danger');
@@ -78,30 +80,31 @@ if (contactForm) {
         feedbackContainer.textContent = "Success: Dispatch registry log transmission processed successfully.";
         
         contactForm.reset();
-
     });
+}
 
 const teamCarousel = document.querySelector('#teamCarousel');
-        if (window.matchMedia("(min-width: 768px)").matches) {
-            const carousel = new bootstrap.Carousel(teamCarousel, {
-                interval: 3500,
-                wrap: true
-            });
+if (teamCarousel) { 
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        const carousel = new bootstrap.Carousel(teamCarousel, {
+            interval: 3500,
+            wrap: true
+        });
+        
+        const items = teamCarousel.querySelectorAll('.carousel-item');
+        items.forEach((el) => {
+            let next = el.nextElementSibling;
+            if (!next) {
+                next = items[0];
+            }
+            let cloneNode = next.cloneNode(true);
+            el.appendChild(cloneNode.children[0]);
             
-            const items = teamCarousel.querySelectorAll('.carousel-item');
-            items.forEach((el) => {
-                let next = el.nextElementSibling;
-                if (!next) {
-                    next = items[0];
-                }
-                let cloneNode = next.cloneNode(true);
-                el.appendChild(cloneNode.children[0]);
-                
-                if (next.nextElementSibling) {
-                    next.nextElementSibling.cloneNode(true).childNodes.forEach(child => el.appendChild(child));
-                } else {
-                    items[0].cloneNode(true).childNodes.forEach(child => el.appendChild(child));
-                }
-            });
-        }
+            if (next.nextElementSibling) {
+                next.nextElementSibling.cloneNode(true).childNodes.forEach(child => el.appendChild(child));
+            } else {
+                items[0].cloneNode(true).childNodes.forEach(child => el.appendChild(child));
+            }
+        });
+    }
 }
