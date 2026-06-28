@@ -83,29 +83,33 @@ if (contactForm) {
     });
 }
 
-const teamCarousel = document.querySelector('#teamCarousel');
-if (teamCarousel) { 
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        const carousel = new bootstrap.Carousel(teamCarousel, {
-            interval: 3500,
-            wrap: true
-        });
-        
-        const items = teamCarousel.querySelectorAll('.carousel-item');
-        items.forEach((el) => {
-            let next = el.nextElementSibling;
-            if (!next) {
-                next = items[0];
-            }
-            let cloneNode = next.cloneNode(true);
-            el.appendChild(cloneNode.children[0]);
-            
-            let nextNext = next.nextElementSibling;
-            if (!nextNext) {
-                nextNext = items[0];
-            }
-            let cloneNode2 = nextNext.cloneNode(true);
-            el.appendChild(cloneNode2.children[0]);
-        });
+const track = document.getElementById('teamSliderTrack');
+if (track) {
+    const cards = Array.from(track.children);
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    const visibleCards = isDesktop ? 3 : 1;
+    
+    for (let i = 0; i < visibleCards; i++) {
+        let clone = cards[i].cloneNode(true);
+        track.appendChild(clone);
     }
+
+    let currentIndex = 0;
+    const cardWidthPercentage = isDesktop ? 33.333 : 100;
+
+    function slideTeam() {
+        currentIndex++;
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(-${currentIndex * cardWidthPercentage}%)`;
+
+        if (currentIndex === cards.length) {
+            setTimeout(() => {
+                track.style.transition = "none";
+                currentIndex = 0;
+                track.style.transform = `translateX(0%)`;
+            }, 500); 
+        }
+    }
+
+    setInterval(slideTeam, 3500);
 }
