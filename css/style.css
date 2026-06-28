@@ -234,10 +234,12 @@ body {
 }
 
 @media (min-width: 768px) {
-    /* Allow items inside the active slide to line up side-by-side */
-    #teamCarousel .carousel-item.active,
+    #teamCarousel .carousel-inner {
+        display: flex;
+    }
     #teamCarousel .carousel-item-next,
-    #teamCarousel .carousel-item-prev {
+    #teamCarousel .carousel-item-prev,
+    #teamCarousel .carousel-item.active {
         display: flex !important;
     }
     #teamCarousel .carousel-item {
@@ -249,8 +251,15 @@ body {
         flex: 0 0 33.333%;
         max-width: 33.333%;
     }
+    
+    #teamCarousel .active.carousel-item-end {
+        transform: translateX(33.333%);
+    }
+    #teamCarousel .carousel-item-prev:not(.carousel-item-end),
+    #teamCarousel .active.carousel-item-start {
+        transform: translateX(-33.333%);
+    }
 }
-
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background: linear-gradient(135deg, #044632 0%, #198754 100%);
