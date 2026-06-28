@@ -233,20 +233,39 @@ body {
     transform: scale(1.05); 
 }
 
+#teamSliderTrack {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.team-slide-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+footer {
+    background: linear-gradient(135deg, #044632 0%, #198754 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 @media (min-width: 768px) {
     #teamCarousel .carousel-inner {
         display: flex;
     }
+
     #teamCarousel .carousel-item-next,
     #teamCarousel .carousel-item-prev,
     #teamCarousel .carousel-item.active {
         display: flex !important;
     }
+
     #teamCarousel .carousel-item {
+        display: none;
         margin-right: 0;
         flex: 0 0 100%;
-        display: none;
     }
+
     #teamCarousel .carousel-item > div {
         flex: 0 0 33.333%;
         max-width: 33.333%;
@@ -255,18 +274,24 @@ body {
     #teamCarousel .active.carousel-item-end {
         transform: translateX(33.333%);
     }
+
     #teamCarousel .carousel-item-prev:not(.carousel-item-end),
     #teamCarousel .active.carousel-item-start {
         transform: translateX(-33.333%);
     }
+
+    .team-slide-card {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
 }
 @media (max-width: 991.98px) {
     .navbar-collapse {
+        margin-top: 0.75rem;
+        padding: 1rem;
         background: linear-gradient(135deg, #044632 0%, #198754 100%);
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
-        margin-top: 0.75rem;
-        padding: 1rem;
     }
     
     .navbar-nav .nav-link {
@@ -287,9 +312,4 @@ body {
     .carousel-img {
         height: 360px;
     }
-}
-
-footer {
-    background: linear-gradient(135deg, #044632 0%, #198754 100%) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
